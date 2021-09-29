@@ -1,0 +1,23 @@
+version: "3"
+services:
+  es:
+    image: 
+    container_name: es
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 
+    volumes:
+      - esdata1:/usr/share/elasticsearch/data
+  web:
+    image: 
+    command: 
+    depends_on:
+      - es
+    ports:
+      - 
+    volumes:
+      - ./flask-app:/opt/flask-app
+volumes:
+    esdata1:
+      driver: local
